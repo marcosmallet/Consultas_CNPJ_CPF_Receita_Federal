@@ -7,6 +7,8 @@
 // inicia sessão
 @session_start();
 
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
+
 //	define o local onde serão guardados os cookies de sessão , path real e completo
 $pasta_cookies = 'cookies/';
 define('COOKIELOCAL', str_replace('\\', '/', realpath('./')).'/'.$pasta_cookies);

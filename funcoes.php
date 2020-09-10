@@ -8,6 +8,8 @@
 $pasta_cookies = 'cookies/';
 define('COOKIELOCAL', str_replace('\\', '/', realpath('./')).'/'.$pasta_cookies);
 
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
+
 // inicia sessão
 @session_start();
 

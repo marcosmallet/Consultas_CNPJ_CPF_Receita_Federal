@@ -6,6 +6,8 @@
 
 require('funcoes.php');
 
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
+
 // dados da postagem de formulário de CNPJ
 $cnpj = $_POST['cnpj'];						// Entradas POST devem ser tratadas para evitar injections
 $captcha_cnpj = $_POST['captcha_cnpj'];		// Entradas POST devem ser tratadas para evitar injections
