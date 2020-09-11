@@ -288,7 +288,7 @@ function parseHtmlCPF($html)
 		else if(strstr($html3,'Data de nascimento informada'))
 		{$resultado['status'] = 'Data de Nascimento divergente';}
 		else
-		{$resultado['status'] = 'Receita não responde';}
+		{$resultado['status'] = 'Captcha digitado incorretamente';}
 	}
 	else
 	{$resultado['status'] = 'OK';}

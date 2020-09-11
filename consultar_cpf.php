@@ -17,12 +17,11 @@ include("getcaptcha.php");
     <!-- Required meta tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Colorlib Templates">
-    <meta name="author" content="Colorlib">
-    <meta name="keywords" content="Colorlib Templates">
+    <meta name="description" content="Consultar CPF">
+    <meta name="keywords" content="Consultar CPF">
 
     <!-- Title Page-->
-    <title>Consulta CPF</title>
+    <title>Consultar CPF</title>
 
     <!-- Icons font CSS-->
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
@@ -44,22 +43,28 @@ include("getcaptcha.php");
             <div class="card card-1">
                 <div class="card-body">
                     <h2 class="title">Consultar CPF</h2>
-                    <form id="receita_cpf" name="receita_cpf" method="post" action="processa.php">
-                        <div class="input-group">
-                            <input class="input--style-1 cpf-mask" type="text" name="cpf" required pattern="^(\d{3}\.\d{3}\.\d{3}-\d{2})|(\d{11})$"
-    placeholder="CPF" title="Digite um CPF no formato: xxx.xxx.xxx-xx">
-                        </div>
+                    <form autocomplete="off" id="receita_cpf" name="receita_cpf" method="post" action="resultado_consulta_cpf.php">
                         <div class="row row-space">
-							<div class="input-group">
-								<input class="input--style-1 js-datepicker date-mask" type="text" placeholder="Data de Nascimento" name="txtDataNascimento">
-								<i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+							<div class="col-2">
+								<div class="input-group">
+									<input class="input--style-1 cpf-mask" type="text" name="cpf" required pattern="^(\d{3}\.\d{3}\.\d{3}-\d{2})|(\d{11})$"
+			placeholder="CPF" title="Digite o CPF no formato: xxx.xxx.xxx-xx">
+								</div>
+							</div>
+							<div class="col-2">
+								<div class="input-group">
+									<input class="input--style-1 js-datepicker date-mask" type="text" placeholder="Data de Nascimento" name="txtDataNascimento" minlength="10" maxlength="10" required title="Digite a Data de Nascimento no formato: DD/MM/YYYY">
+									<i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+								</div>
 							</div>
                         </div>
 						<br />                           
 						<img id="captcha_cpf" src="<?php echo $imagem_cpf; ?>" border="0">
 						<br />
-						<div class="input-group">
-						<input placeholder="Digite o Captcha acima" class="input--style-1" type="text" name="captcha_cpf" minlength="6" maxlength="6" required>
+						<div class="col-2">
+							<div class="input-group">
+								<input autocomplete="off" placeholder="Digite o Captcha acima" class="input--style-1" type="text" name="captcha_cpf" minlength="6" maxlength="6" required>
+							</div>
 						</div>
 						<br />
                         <div class="p-t-20">
