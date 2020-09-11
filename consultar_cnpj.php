@@ -46,7 +46,7 @@ include("getcaptcha.php");
                     <form autocomplete="off" id="receita_cnpj" name="receita_cnpj" method="post" action="resultado_consulta_cnpj.php">
                         <div class="col-2">
 							<div class="input-group">
-								<input class="input--style-1" type="text" name="cnpj" minlength="14" maxlength="14" placeholder="CNPJ (Somente Números)" title="Digite o CNPJ (Somente números)" required>
+								<input class="input--style-1" type="text" name="cnpj" minlength="14" maxlength="14" placeholder="CNPJ (Somente Números)" title="Digite o CNPJ (Somente números)" pattern="[0-9]+" required>
 							</div>
                         </div>
 						<br />                           
