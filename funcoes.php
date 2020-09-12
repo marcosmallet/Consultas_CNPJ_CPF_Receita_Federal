@@ -248,7 +248,7 @@ function parseHtmlCNPJ($html)
 		if(strstr($html3,utf8_decode('O número do CNPJ não é válido')))
 		{$resultado['status'] = 'CNPJ incorreto ou não existe';}
 		else
-		{$resultado['status'] = 'Imagem digitada incorretamente';}
+		{$resultado['status'] = 'Captcha digitado incorretamente';}
 	}
 	else
 	{$resultado['status'] = 'OK';}

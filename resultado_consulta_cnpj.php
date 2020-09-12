@@ -8,16 +8,16 @@ require('funcoes.php');
 
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
-// dados da postagem do formulario de CPF
-$cpf = $_POST['cpf'];						// Entradas POST devem ser tratadas para evitar injections
-$datanascim = $_POST['txtDataNascimento'];	// Entradas POST devem ser tratadas para evitar injections
-$captcha_cpf = $_POST['captcha_cpf'];		// Entradas POST devem ser tratadas para evitar injections
+// dados da postagem de formulário de CNPJ
+$cnpj = $_POST['cnpj'];						// Entradas POST devem ser tratadas para evitar injections
+$captcha_cnpj = $_POST['captcha_cnpj'];		// Entradas POST devem ser tratadas para evitar injections
 
-if($cpf AND $datanascim AND $captcha_cpf) {
-	$getHtmlCPF = getHtmlCPF($cpf, $datanascim, $captcha_cpf);
-	$campos = parseHtmlCPF($getHtmlCPF);
+if($cnpj AND $captcha_cnpj)
+{
+	$getHtmlCNPJ = getHtmlCNPJ($cnpj, $captcha_cnpj);
+	$campos = parseHtmlCNPJ($getHtmlCNPJ);
 } else {
-	header("Location: ./consultar_cpf.php", true, 301);
+	header("Location: ./consultar_cnpj.php", true, 301);
 	exit();
 }
 ?>
@@ -29,11 +29,11 @@ if($cpf AND $datanascim AND $captcha_cpf) {
     <!-- Required meta tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Consultar CPF">
-    <meta name="keywords" content="Consultar CPF">
+    <meta name="description" content="Consultar CNPJ">
+    <meta name="keywords" content="Consultar CNPJ">
 
     <!-- Title Page-->
-    <title>Consultar CPF - Resultado</title>
+    <title>Consultar CNPJ - Resultado</title>
 
     <!-- Icons font CSS-->
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
@@ -54,32 +54,47 @@ if($cpf AND $datanascim AND $captcha_cpf) {
         <div class="wrapper wrapper--w680">
             <div class="card card-1">
                 <div class="card-body">
-                    <h2 class="title">Consultar CPF - Resultado</h2>
+                    <h2 class="title">Consultar CNPJ - Resultado</h2>
 					<div class="input-group"  <?= $campos["status"]=="OK" ? " style='display: none;'" : ""?>>
 						<b style="color: red">ERRO: <?=$campos["status"]?></b>
 					</div>
 					<div class="row row-space" <?= $campos["status"]!="OK" ? " style='display: none;'" : ""?>>
 						<div class="input-group">
-							Nome: <b><?=$campos[1]?></b>
+							Nome: <b><?=$campos[2]?></b>
+						</div>
+					</div>
+					<div class="row row-space" <?= ($campos["status"]!="OK" || $campos[3]==null || $campos[3]=="********") ? " style='display: none;'" : ""?>>
+						<div class="input-group">
+							Nome Fantasia: <b><?=$campos[3]?></b>
 						</div>
 					</div>
 					<div class="row row-space" <?= $campos["status"]!="OK" ? " style='display: none;'" : ""?>>
 						<div class="input-group">
-							CPF: <b><?=$campos[0]?></b>
+							CNPJ: <b><?=$campos[0]?></b>
 						</div>
 					</div>
 					<div class="row row-space" <?= $campos["status"]!="OK" ? " style='display: none;'" : ""?>>
 						<div class="input-group">
-							Data de Nascimento: <b><?=$campos[2]?></b>
+							Data de abertura: <b><?=$campos[1]?></b>
 						</div>
 					</div>
 					<div class="row row-space" <?= $campos["status"]!="OK" ? " style='display: none;'" : ""?>>
 						<div class="input-group">
-							Situação Cadastral: <b><?=$campos[3]?></b>
+							Situação Cadastral: <b><?=$campos[18]?></b>
+						</div>
+					</div>
+					<div class="row row-space" <?= ($campos["status"]!="OK" || $campos[20]==null || $campos[20]=="********") ? " style='display: none;'" : ""?>>
+						<div class="input-group">
+							Motivo da Situação Cadastral: <b><?=$campos[20]?></b>
+						</div>
+					</div>
+					<div class="row row-space" <?= ($campos["status"]!="OK" || $campos[21]==null || $campos[21]=="********") ? " style='display: none;'" : ""?>>
+						<div class="input-group">
+							Situação Especial: <b><?=$campos[21]?></b>
 						</div>
 					</div>
 					<div class="p-t-20">
-						<button class="btn btn--radius btn--green" onclick="location.href='./consultar_cpf.php';">Consultar outro CPF</button>
+						<button class="btn btn--radius btn--green" onclick="location.href='./consultar_cnpj.php';">Consultar outro CNPJ</button>
 					</div>
                 </div>
             </div>
