@@ -69,7 +69,7 @@ include("getcaptcha.php");
 
     <!-- Jquery JS-->
     <script src="vendor/jquery/jquery.min.js"></script>
-	<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
     <!-- Vendor JS-->
     <script src="vendor/select2/select2.min.js"></script>
     <script src="vendor/datepicker/moment.min.js"></script>
