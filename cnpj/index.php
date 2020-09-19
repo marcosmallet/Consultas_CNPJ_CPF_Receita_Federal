@@ -9,11 +9,11 @@ include("../getcaptcha.php");
     <!-- Required meta tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Consultando CPF">
-    <meta name="keywords" content="Consultando CPF">
+    <meta name="description" content="Consultando CNPJ">
+    <meta name="keywords" content="Consultando CNPJ">
 
     <!-- Title Page-->
-    <title>Consultando CPF</title>
+    <title>Consultando CNPJ</title>
 
     <!-- Icons font CSS-->
     <link href="../vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
@@ -44,33 +44,24 @@ include("../getcaptcha.php");
         <div class="wrapper wrapper--w680">
             <div class="card card-1">
                 <div class="card-body">
-                    <h2 class="title">Consultando CPF</h2>
-                    <form autocomplete="off" id="receita_cpf" name="receita_cpf" method="post" action="resultado.php">
-                        <div class="row row-space">
-							<div class="col-2">
-								<div class="input-group">
-									<input class="input--style-1 cpf-mask" type="text" name="cpf" required pattern="^(\d{3}\.\d{3}\.\d{3}-\d{2})|(\d{11})$"
-			placeholder="CPF" title="Digite o CPF no formato: xxx.xxx.xxx-xx">
-								</div>
-							</div>
-							<div class="col-2">
-								<div class="input-group">
-									<input class="input--style-1 js-datepicker date-mask" type="text" placeholder="Data de Nascimento" name="txtDataNascimento" minlength="10" maxlength="10" required title="Digite a Data de Nascimento no formato: DD/MM/YYYY">
-									<i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
-								</div>
+                    <h2 class="title">Consultando CNPJ</h2>
+                    <form autocomplete="off" id="receita_cnpj" name="receita_cnpj" method="post" action="resultado.php">
+                        <div class="col-2">
+							<div class="input-group">
+								<input class="input--style-1" type="text" name="cnpj" minlength="14" maxlength="14" placeholder="CNPJ (Somente Números)" title="Digite o CNPJ (Somente números)" pattern="[0-9]+" required>
 							</div>
                         </div>
 						<br />                           
-						<img id="captcha_cpf" src="<?php echo $imagem_cpf; ?>" border="0">
+						<img id="captcha_cnpj" src="<?php echo $imagem_cnpj; ?>" border="0">
 						<br />
 						<div class="col-2">
 							<div class="input-group">
-								<input autocomplete="off" placeholder="Digite o Captcha acima" class="input--style-1" type="text" name="captcha_cpf" minlength="6" maxlength="6" required>
+								<input autocomplete="off" placeholder="Digite o Captcha acima" class="input--style-1" type="text" name="captcha_cnpj" minlength="6" maxlength="6" required>
 							</div>
 						</div>
 						<br />
                         <div class="p-t-20">
-                            <button class="btn btn--radius btn--green" type="submit">Consultar CPF</button>
+                            <button class="btn btn--radius btn--green" type="submit">Consultar CNPJ</button>
                         </div>
                     </form>
                 </div>
@@ -80,7 +71,6 @@ include("../getcaptcha.php");
 		  <p>Consultando.sytes.net</p>
 		</div>
     </div>
-	
 
     <!-- Jquery JS-->
     <script src="../vendor/jquery/jquery.min.js"></script>

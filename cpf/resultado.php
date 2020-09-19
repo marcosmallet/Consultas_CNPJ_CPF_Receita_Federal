@@ -12,7 +12,7 @@ if($cpf AND $datanascim AND $captcha_cpf) {
 	$getHtmlCPF = getHtmlCPF($cpf, $datanascim, $captcha_cpf);
 	$campos = parseHtmlCPF($getHtmlCPF);
 } else {
-	header("Location: ./index.php", true, 301);
+	header("Location: ./", true, 301);
 	exit();
 }
 ?>
@@ -24,8 +24,8 @@ if($cpf AND $datanascim AND $captcha_cpf) {
     <!-- Required meta tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Consultar CPF">
-    <meta name="keywords" content="Consultar CPF">
+    <meta name="description" content="Consultando CPF - Resultado">
+    <meta name="keywords" content="Consultando CPF - Resultado">
 
     <!-- Title Page-->
     <title>Resultado</title>
@@ -84,7 +84,7 @@ if($cpf AND $datanascim AND $captcha_cpf) {
 						</div>
 					</div>
 					<div class="p-t-20">
-						<button class="btn btn--radius btn--green" onclick="location.href='./index.php';">Consultar outro CPF</button>
+						<button class="btn btn--radius btn--green" onclick="location.href='./';">Consultar outro CPF</button>
 					</div>
                 </div>
             </div>
