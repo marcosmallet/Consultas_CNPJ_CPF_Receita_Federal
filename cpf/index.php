@@ -1,13 +1,5 @@
 <?php
-// Criado por Marcos Peli
-// ultima atualização 26/03/2020 - Scripts alterados para utilização do captcha sonoro, unica opção após a atualização da receita com recaptcha do google
-// o objetivo dos scripts deste repositório é integrar consultas de CNPJ e CPF diretamente da receita federal
-// para dentro de aplicações web que necessitem da resposta destas consultas para proseguirem, como e-comerce e afins.
-// importante, CPF e DATA de NASCIM. devem ser digitados no formato ###.###.###-##  e  dd/mm/aaaa
-// CNPJ devem ser digitados só NUMEROS   ###########  (sem ponto ou hifem)
-// essas entradas nâo foram tratadas, pois o objetivo é apenas a implementaçâo da soluçao das consulta e testes
-
-include("getcaptcha.php");
+include("../getcaptcha.php");
 ?>
 
 <!DOCTYPE html>
@@ -17,24 +9,34 @@ include("getcaptcha.php");
     <!-- Required meta tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Consultar CPF">
-    <meta name="keywords" content="Consultar CPF">
+    <meta name="description" content="Consultando CPF">
+    <meta name="keywords" content="Consultando CPF">
 
     <!-- Title Page-->
-    <title>Consultar CPF</title>
+    <title>Consultando CPF</title>
 
     <!-- Icons font CSS-->
-    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="../vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="../vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
     <!-- Font special for pages-->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
 
     <!-- Vendor CSS-->
-    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
-    <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+    <link href="../vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="../vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
 
     <!-- Main CSS-->
-    <link href="css/main.css" rel="stylesheet" media="all">
+    <link href="../css/main.css" rel="stylesheet" media="all">
+	<style>
+		.footer {
+		   position: fixed;
+		   left: 0;
+		   bottom: 0;
+		   width: 100%;
+		   color: white;
+		   text-align: center;
+		}
+	</style>
 </head>
 
 <body>
@@ -42,8 +44,8 @@ include("getcaptcha.php");
         <div class="wrapper wrapper--w680">
             <div class="card card-1">
                 <div class="card-body">
-                    <h2 class="title">Consultar CPF</h2>
-                    <form autocomplete="off" id="receita_cpf" name="receita_cpf" method="post" action="resultado_consulta_cpf.php">
+                    <h2 class="title">Consultando CPF</h2>
+                    <form autocomplete="off" id="receita_cpf" name="receita_cpf" method="post" action="resultado.php">
                         <div class="row row-space">
 							<div class="col-2">
 								<div class="input-group">
@@ -74,22 +76,26 @@ include("getcaptcha.php");
                 </div>
             </div>
         </div>
+		<div class="footer">
+		  <p>Consultando.sytes.net</p>
+		</div>
     </div>
+	
 
     <!-- Jquery JS-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-	<script type="text/javascript" src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="../vendor/jquery/jquery.min.js"></script>
+	<script src="../vendor/jquery/jquery-2.0.3.min.js"></script>
     <!-- Vendor JS-->
-    <script src="vendor/select2/select2.min.js"></script>
-    <script src="vendor/datepicker/moment.min.js"></script>
-    <script src="vendor/datepicker/daterangepicker.js"></script>
+    <script src="../vendor/select2/select2.min.js"></script>
+    <script src="../vendor/datepicker/moment.min.js"></script>
+    <script src="../vendor/datepicker/daterangepicker.js"></script>
 
     <!-- Main JS-->
-    <script src="js/global.js"></script>
+    <script src="../js/global.js"></script>
 	
-	<script src="js/locastyle.js"></script>
+	<script src="../js/locastyle.js"></script>
 
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</body>
 
 </html>
 <!-- end document-->
