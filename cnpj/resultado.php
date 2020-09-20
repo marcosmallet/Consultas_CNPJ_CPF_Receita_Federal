@@ -122,6 +122,15 @@ if($cnpj AND $captcha_cnpj)
 			$this.button('loading');
 		});
 	</script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-68896019-2"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-68896019-2');
+	</script>
 </body>
 
 </html>
