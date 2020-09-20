@@ -49,13 +49,13 @@ include("../getcaptcha.php");
                         <div class="row row-space">
 							<div class="col-2">
 								<div class="input-group">
-									<input class="input--style-1 cpf-mask" type="text" name="cpf" required pattern="^(\d{3}\.\d{3}\.\d{3}-\d{2})|(\d{11})$"
+									<input class="input--style-1 cpf-mask" type="text" id="cpf" name="cpf" required pattern="^(\d{3}\.\d{3}\.\d{3}-\d{2})|(\d{11})$"
 			placeholder="CPF" title="Digite o CPF no formato: xxx.xxx.xxx-xx">
 								</div>
 							</div>
 							<div class="col-2">
 								<div class="input-group">
-									<input class="input--style-1 js-datepicker date-mask" type="text" placeholder="Data de Nascimento" name="txtDataNascimento" minlength="10" maxlength="10" required title="Digite a Data de Nascimento no formato: DD/MM/YYYY">
+									<input class="input--style-1 js-datepicker date-mask" type="text" placeholder="Data de Nascimento" id="dataNascimento" name="txtDataNascimento" minlength="10" maxlength="10" required title="Digite a Data de Nascimento no formato: DD/MM/YYYY">
 									<i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
 								</div>
 							</div>
@@ -65,12 +65,12 @@ include("../getcaptcha.php");
 						<br />
 						<div class="col-2">
 							<div class="input-group">
-								<input autocomplete="off" placeholder="Digite o Captcha acima" class="input--style-1" type="text" name="captcha_cpf" minlength="6" maxlength="6" required>
+								<input autocomplete="off" id="captcha" placeholder="Digite o Captcha acima" class="input--style-1" type="text" name="captcha_cpf" minlength="6" maxlength="6" required>
 							</div>
 						</div>
 						<br />
                         <div class="p-t-20">
-                            <button class="btn btn--radius btn--green" type="submit">Consultar CPF</button>
+                            <button class="btn btn--radius btn--green" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Processando" type="submit">Consultar CPF</button>
                         </div>
                     </form>
                 </div>
@@ -94,7 +94,15 @@ include("../getcaptcha.php");
     <script src="../js/global.js"></script>
 	
 	<script src="../js/locastyle.js"></script>
-
+	<script src="../js/bootstrap.min.js"></script>
+	<script>
+		$('button').on('click', function() {
+			if ($('#cpf')[0].checkValidity() && $('#dataNascimento')[0].checkValidity() && $('#captcha')[0].checkValidity()) {
+				var $this = $(this);
+				$this.button('loading');
+			}
+		});
+	</script>
 </body>
 
 </html>

@@ -99,7 +99,7 @@ if($cnpj AND $captcha_cnpj)
 						</div>
 					</div>
 					<div class="p-t-20">
-						<button class="btn btn--radius btn--green" onclick="location.href='./';">Consultar outro CNPJ</button>
+						<button class="btn btn--radius btn--green" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Processando" onclick="location.href='./';">Consultar outro CNPJ</button>
 					</div>
                 </div>
             </div>
@@ -115,6 +115,13 @@ if($cnpj AND $captcha_cnpj)
 
     <!-- Main JS-->
     <script src="../js/global.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script>
+		$('button').on('click', function() {
+			var $this = $(this);
+			$this.button('loading');
+		});
+	</script>
 </body>
 
 </html>

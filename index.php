@@ -47,12 +47,12 @@ include("getcaptcha.php");
 					<div class="row row-space">
 						<div class="col-2">
 							<div class="p-t-20">
-								<button class="btn btn--radius btn--green" onclick="location.href='./cpf';">Consultar CPF</button>
+								<button class="btn btn--radius btn--green" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Processando" onclick="location.href='./cpf';">Consultar CPF</button>
 							</div>
 						</div>
 						<div class="col-2">
 							<div class="p-t-20">
-								<button class="btn btn--radius btn--green" onclick="location.href='./cnpj';">Consultar CNPJ</button>
+								<button class="btn btn--radius btn--green" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Processando" onclick="location.href='./cnpj';">Consultar CNPJ</button>
 							</div>
 						</div>
 					</div>
@@ -63,6 +63,14 @@ include("getcaptcha.php");
 		  <p>Consultando.sytes.net</p>
 		</div>
     </div>
+	<script src="./vendor/jquery/jquery.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+	<script>
+		$('button').on('click', function() {
+			var $this = $(this);
+			$this.button('loading');
+		});
+	</script>
 </body>
 </html>
 <!-- end document-->

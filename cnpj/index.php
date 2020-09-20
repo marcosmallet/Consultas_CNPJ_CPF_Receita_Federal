@@ -48,7 +48,7 @@ include("../getcaptcha.php");
                     <form autocomplete="off" id="receita_cnpj" name="receita_cnpj" method="post" action="resultado.php">
                         <div class="col-2">
 							<div class="input-group">
-								<input class="input--style-1" type="text" name="cnpj" minlength="14" maxlength="14" placeholder="CNPJ (Somente Números)" title="Digite o CNPJ (Somente números)" pattern="[0-9]+" required>
+								<input class="input--style-1" type="text" id="cnpj" name="cnpj" minlength="14" maxlength="14" placeholder="CNPJ (Somente Números)" title="Digite o CNPJ (Somente números)" pattern="[0-9]+" required>
 							</div>
                         </div>
 						<br />                           
@@ -56,12 +56,12 @@ include("../getcaptcha.php");
 						<br />
 						<div class="col-2">
 							<div class="input-group">
-								<input autocomplete="off" placeholder="Digite o Captcha acima" class="input--style-1" type="text" name="captcha_cnpj" minlength="6" maxlength="6" required>
+								<input autocomplete="off" id="captcha" placeholder="Digite o Captcha acima" class="input--style-1" type="text" name="captcha_cnpj" minlength="6" maxlength="6" required>
 							</div>
 						</div>
 						<br />
                         <div class="p-t-20">
-                            <button class="btn btn--radius btn--green" type="submit">Consultar CNPJ</button>
+                            <button class="btn btn--radius btn--green" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Processando" type="submit">Consultar CNPJ</button>
                         </div>
                     </form>
                 </div>
@@ -84,7 +84,15 @@ include("../getcaptcha.php");
     <script src="../js/global.js"></script>
 	
 	<script src="../js/locastyle.js"></script>
-
+	<script src="../js/bootstrap.min.js"></script>
+	<script>
+		$('button').on('click', function() {
+			if ($('#cnpj')[0].checkValidity() && $('#captcha')[0].checkValidity()) {
+				var $this = $(this);
+				$this.button('loading');
+			}
+		});
+	</script>
 </body>
 
 </html>
