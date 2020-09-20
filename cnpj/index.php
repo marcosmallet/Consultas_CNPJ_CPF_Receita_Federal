@@ -11,6 +11,16 @@ include("../getcaptcha.php");
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Consultando CNPJ">
     <meta name="keywords" content="Consultando CNPJ">
+	
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-68896019-2"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-68896019-2');
+	</script>
 
     <!-- Title Page-->
     <title>Consultando CNPJ</title>
@@ -92,15 +102,6 @@ include("../getcaptcha.php");
 				$this.button('loading');
 			}
 		});
-	</script>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-68896019-2"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', 'UA-68896019-2');
 	</script>
 </body>
 

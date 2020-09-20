@@ -11,6 +11,17 @@ include("getcaptcha.php");
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Consultando">
     <meta name="keywords" content="Consultando">
+	<meta name="google-site-verification" content="t83v63j3r9ryJu4NJrgxgPjxth_DgbpDmC9Sf9Hjmiw" />
+	
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-68896019-2"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-68896019-2');
+	</script>
 
     <!-- Title Page-->
     <title>Consultando</title>
@@ -70,15 +81,6 @@ include("getcaptcha.php");
 			var $this = $(this);
 			$this.button('loading');
 		});
-	</script>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-68896019-2"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', 'UA-68896019-2');
 	</script>
 </body>
 </html>

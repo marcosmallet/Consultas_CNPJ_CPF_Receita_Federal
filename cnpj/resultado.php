@@ -26,6 +26,16 @@ if($cnpj AND $captcha_cnpj)
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Consultando CNPJ - Resultado">
     <meta name="keywords" content="Consultando CNPJ - Resultado">
+	
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-68896019-2"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-68896019-2');
+	</script>
 
     <!-- Title Page-->
     <title>Resultado</title>
@@ -121,15 +131,6 @@ if($cnpj AND $captcha_cnpj)
 			var $this = $(this);
 			$this.button('loading');
 		});
-	</script>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-68896019-2"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', 'UA-68896019-2');
 	</script>
 </body>
 
